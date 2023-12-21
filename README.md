@@ -6,7 +6,7 @@ Over the weekend, my 6-year-old nephew and I spent a few hours playing with Lego
 
 My role in this case study is that of a toy company marketing analyst.  The toy industry faces a challenge in creating toys which captivates children's interest for a month or two, let alone 7+ generations.  My direct supervisor tasked me with the challenge of analyzing Legos production trends and find any insight that we could use to create a popular generational toy.  
 
-Using PostgreSQL and Jupyter Notebook, with Python for visualization, the following questions will be answered:
+Using PostgreSQL and Python for visualization, the following questions will be answered:
 
 1. What is the average number of Lego parts over total time span and per year?
 2. What is the average number of Lego sets released per from 1950-2017?
@@ -81,5 +81,5 @@ Lets divide the timeline into two blocks to invistagate the increased production
 
 ## Recommendations to build the next generational toy
 1. Create a toy that is extremely simple to play with.  Anyone can connect lego bricks.
-2. Encourage the child to use their creativity and create a toy, such as a car, that they can play with when they get bored stacking bricks.
-3. Create an ageless toy by creating versions which connect to pop culture trends such as movies and tv shows.  
+2. Encourage the child to use their creativity and create a toy, such as a car, that they can play with when they become bored stacking bricks.
+3. Create an timeless toy which can be connected to pop culture trends such as movies and tv shows.  

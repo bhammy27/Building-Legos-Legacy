@@ -68,7 +68,6 @@ Using PostgreSQL and Jupyter Notebook, with Python for visualization, the follow
 - Lego produced the most sets, **713 set** in **2014**.  The **3 sets** released in **1960** marked the lowest sets relased per year.
 - An interesting trend appears when comparing the yearly production vs the average production.
 
-![image](image.png)
 
 Lets divide the timeline into two blocks to invistagate the increased production from 1998 onward.  We will consider the time up to 1997 one block and the time after another block.
 - From 1950 up to and including 1997 Lego produced an average of just over 61 sets per year. The new average sets per year is almost 1/3rd less* than the 176.9 average sets produced per year from 1950-2017.

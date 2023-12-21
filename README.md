@@ -67,7 +67,6 @@ Using PostgreSQL and Python for visualization, the following questions will be a
 - From 1950 to 2017 Lego produced averaged **28698** parts per year with **2016** having the highest average with **150834** individual parts.  In **1959** Lego produced the lowest average parts with **65** parts.
 - Lego produced the most sets, **713 set** in **2014**.  The **3 sets** released in **1960** marked the lowest sets relased per year.
 - An interesting trend appears when comparing the yearly production vs the average production.
-![Average Line Charts](![image](https://github.com/bhammy27/Building_Legos_Legacy/assets/154477061/f7bc805f-2079-4154-841b-639e07426838)
 
 
 Lets divide the timeline into two blocks to invistagate the increased production from 1998 onward.  We will consider the time up to 1997 one block and the time after another block.

@@ -1,0 +1,180 @@
+--  Let's begin by calculating the average parts produced per year
+--  I will use a subquery in the FROM clause to determine the total number of parts (this is to demonstrate my knowledge of subqueries - I would suggest using a CTE here)
+SELECT 
+    ROUND(AVG(total_parts),0) AS avg_yearly_parts_produced
+FROM 
+    -- calculating total parts produced
+    (SELECT 
+        year,
+        SUM(num_parts) AS total_parts
+    FROM sets
+    GROUP BY year) parts_per_year;
+
+--  Now lets group the previous query by year to see if annual production trends exist
+SELECT 
+    year,
+    ROUND(AVG(total_parts),0) AS avg_parts_per_year
+FROM 
+    -- calcuate total parts per year
+    (SELECT 
+        year,
+        SUM(num_parts) AS total_parts
+    FROM sets
+    GROUP BY year) parts_per_year
+GROUP BY year;
+
+-- Next lets calculate the total number of sets produces
+-- This requires the use of a JOIN
+SELECT 
+    COUNT(s.set_num) AS num_sets
+FROM
+     themes as t
+LEFT JOIN
+    sets as s
+    ON t.id = s.theme_id;
+
+--  Now lets group the previous query by year to identify annual production trends
+SELECT 
+  year,
+  COUNT(set_num) AS sets
+FROM sets
+GROUP BY year
+ORDER BY year;
+
+-- To calculate the average sets produced per year over the span of the data set:
+-- Create a CTE using the above query to find number of sets produced per year
+-- Call the CTE in the FROM statement using the alias sets_per_yr
+-- Average sets in SELECT statement to find avg_num_sets_year
+
+WITH sets_per_yr AS
+    (SELECT 
+        year,
+        COUNT(set_num) AS sets
+    FROM sets
+    GROUP BY year
+    Order By sets)
+
+SELECT 
+    Round(AVG(sets),2) as avg_num_sets_year
+FROM sets_per_yr
+
+--  Now we will look to see what the top 5 largest sets are
+Select
+    DISTINCT name,
+    year,
+    num_parts
+FROM sets
+ORDER BY num_parts DESC
+LIMIT 5;
+
+-- Calculating the average sets per year from 1950-1997 then 1998-2017
+WITH sets_per_yr AS
+    (SELECT 
+        year,
+        COUNT(DISTINCT name) AS sets
+    FROM sets
+    GROUP BY year
+    Order By sets)
+
+SELECT
+    ROUND(AVG(sets),2)
+FROM sets_per_yr
+WHERE 
+    year < 1998;
+
+WITH sets_per_yr AS
+    (SELECT 
+        year,
+        COUNT(DISTINCT name) AS sets
+    FROM sets
+    GROUP BY year
+    Order By sets)
+
+SELECT
+    AVG(sets)
+FROM sets_per_yr
+WHERE 
+    year > 1997;
+
+-- Lets look at set names during each time frame to see if there are any trends in sets
+SELECT 
+    t.name,
+    COUNT(s.set_num) AS num_sets
+FROM
+     themes as t
+LEFT JOIN
+    sets as s
+    ON t.id = s.theme_id
+WHERE 
+    s.year <= 1997
+GROUP BY
+    t.name
+ORDER BY  
+    num_sets DESC;
+
+
+SELECT 
+    t.name,
+    COUNT(s.set_num) AS num_sets
+FROM
+     themes as t
+LEFT JOIN
+    sets as s
+    ON t.id = s.theme_id
+WHERE 
+    s.year > 1997
+GROUP BY
+    t.name
+ORDER BY  
+    num_sets DESC;
+
+-- Calculating the total number of Star Wars sets produced
+SELECT 
+    COUNT(s.set_num) AS num_star_wars_sets
+FROM
+     themes as t
+LEFT JOIN
+    sets as s
+    ON t.id = s.theme_id
+WHERE 
+    t.name ILIKE '%Star Wars%';
+
+
+-- Finding number of Star Wars sets released per year
+SELECT 
+    DISTINCT year,
+    COUNT(s.set_num) OVER(PARTITION BY year) AS num_sets
+FROM
+     themes as t
+LEFT JOIN
+    sets as s
+    ON t.id = s.theme_id
+WHERE 
+    t.name ILIKE '%Star Wars%'
+    AND year IS NOT NULL
+GROUP BY
+    year,
+    s.set_num
+ORDER BY num_sets;
+
+
+--  Lets look at the largest Star Wars set produced
+SELECT 
+    year,
+    t.name,
+    SUM(s.num_parts) AS parts
+FROM
+     themes as t
+LEFT JOIN
+    sets as s
+    ON t.id = s.theme_id
+WHERE 
+    t.name ILIKE '%Star Wars%'
+GROUP BY
+    year,
+    t.name
+HAVING
+    SUM(s.num_parts) IS NOT NULL
+ORDER BY parts DESC;
+
+

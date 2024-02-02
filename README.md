@@ -2,9 +2,9 @@
 ### A historical case study using SQL and Python to discover how Lego remained a popular toy for over 7 generations
 
 ## Overview:
-Over the weekend, my 6-year-old nephew and I spent a few hours playing with Legos.  As he randomly connected the multicolored bricks, I built a little car and a house.  After over an hour of stacking bricks, he then spent the rest of the afternoon playing with the car I made.  I began to wonder, how such a simple toy that my parents and I played with still popular today?  Being an inquisitive Data Analyst, I found and analyzed data which covers Lego's production from 1950-2017.
+Over the weekend, my 6-year-old nephew and I spent a few hours playing with Legos.  As he randomly connected the multicolored bricks, I built a little car and a house.  After over an hour of stacking bricks, he then spent the rest of the afternoon playing with the car I made.  I began to wonder, how such a simple toy that my parents and I played with remain popular today?  Being an inquisitive Data Analyst, I found and analyzed data which covers Lego's production from 1950-2017.
 
-My role in this case study is that of a toy company marketing analyst.  The toy industry faces a challenge in creating toys which captivates children's interest for a month or two, let alone 7+ generations.  My direct supervisor tasked me with the challenge of analyzing Legos production trends and find any insight that we could use to create a popular generational toy.  
+My role in this case study is that of a toy company marketing analyst.  The toy industry faces a challenge in creating toys which captivate children's interest for a month or two, let alone 7+ generations.  My direct supervisor tasked me with the challenge of analyzing Legos production trends and discover any insight that we could use to create a popular generational toy.  
 
 Using PostgreSQL and Python for visualization, the following questions will be answered:
 
@@ -18,7 +18,7 @@ Using PostgreSQL and Python for visualization, the following questions will be a
 ![image](https://github.com/bhammy27/Building_Legos_Legacy/assets/154477061/40e9920f-361a-4f6d-b70a-b78d034e7b21)
 
 
-#### An in depth description of the above ER diagram. ([source](https://rebrickable.com/downloads)):
+#### An in-depth description of the above ER diagram. ([source](https://rebrickable.com/downloads)):
 
 #### inventory_parts
 - "inventory_id" - id of the inventory the part is in (as in the inventories table)
@@ -69,23 +69,23 @@ Using PostgreSQL and Python for visualization, the following questions will be a
 
 ## Analysis
 - From 1950 to 2017 Lego produced averaged **28698** parts per year with **2016** having the highest average with **150834** individual parts.  In **1959** Lego produced the lowest average parts with **65** parts.
-- Lego produced the most sets, **713 set** in **2014**.  The **3 sets** released in **1960** marked the lowest sets relased per year.
+- Lego produced the most sets, **713 set** in **2014**.  The **3 sets** released in **1960** marked the lowest sets released per year.
 - An interesting trend appears when comparing the yearly production vs the average production.
 
 ![image](https://github.com/bhammy27/Building_Legos_Legacy/assets/154477061/f94578e9-02a6-4b00-bc0b-a1654fe79b1e)
 
 
-Lets divide the timeline into two blocks to invistagate the increased production from 1998 onward.  We will consider the time up to 1997 one block and the time after another block.
+Let's divide the timeline into two blocks to investigate the increased production from 1998 onward.  We will consider the time up to 1997 one block and the time after another block.
 - From 1950 up to and including 1997 Lego produced an average of just over 61 sets per year. The new average sets per year is almost 1/3rd less* than the 176.9 average sets produced per year from 1950-2017.
-- The average sets produced annualy from 1998 up to and including 2017 increases to **426.1**, almost 2.5 times as many average sets per year.  What created such a large increase?
+- The average sets produced annually from 1998 up to and including 2017 increases to **426.1**, almost 2.5 times as many average sets per year.  What created such a large increase?
 
 ### With Legos Star Wars Strikes Back!
 - In 1999 Lego produced its first Star Wars themed set to take advantage of the release of Star Wars Episode 1 and resurgent popularity of the Star Wars Trilogy.
 - Lego produced **635** total Star Wars sets since 1999 with over 60 sets a year released in 2012, 2014, 2016 alone. 
-- During 2014, Lego released **62** sets.  That markes the most Star Wars sets released in one year.  
+- During 2014, Lego released **62** sets.  That marks the most Star Wars sets released in one year.  
 - The Star Wars Episode 4/5/6 edition released in 2005 has **11169** parts, making it the largest Star Wars set produced
 
 ## Recommendations to build the next generational toy
-1. Create a toy that is extremely simple to play with.  Anyone can connect lego bricks.
+1. Create a toy that is extremely simple to play with.  Anyone can stack Lego bricks.
 2. Encourage the child to use their creativity and create a toy, such as a car, that they can play with when they become bored stacking bricks.
-3. Create an timeless toy which can be connected to pop culture trends such as movies and tv shows.  
+3. Create a timeless toy which can be connected to pop culture trends such as movies and tv shows.  

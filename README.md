@@ -11,7 +11,30 @@ Using PostgreSQL and Python for visualization, the following questions will be a
 1. What is the average number of Lego parts over total time span and per year?
 2. What is the average number of Lego sets released per from 1950-2017?
 3. Are there any trends with the sets produced and number of parts produced?
-4. What has Lego done to create a generational toy that has remained popular for over 7 generations?
+4. How can my toy company build the next generational toy?
+
+## Analysis
+- From 1950 to 2017 Lego produced averaged **28698** parts per year with **2016** having the highest average with **150834** individual parts.  In **1959** Lego produced the lowest average parts with **65** parts.
+- Lego produced the most sets, **713 set** in **2014**.  The **3 sets** released in **1960** marked the lowest sets released per year.
+- An interesting trend appears when comparing the yearly production vs the average production.
+
+![image](https://github.com/bhammy27/Building_Legos_Legacy/assets/154477061/f94578e9-02a6-4b00-bc0b-a1654fe79b1e)
+
+
+Let's divide the timeline into two blocks to investigate the increased production from 1998 onward.  We will consider the time up to 1997 one block and the time after another block.
+- From 1950 up to and including 1997 Lego produced an average of just over 61 sets per year. The new average sets per year is almost 1/3rd less* than the 176.9 average sets produced per year from 1950-2017.
+- The average sets produced annually from 1998 up to and including 2017 increases to **426.1**, almost 2.5 times as many average sets per year.  What created such a large increase?
+
+### With Legos Star Wars Strikes Back!
+- In 1999 Lego produced its first Star Wars themed set to take advantage of the release of Star Wars Episode 1 and resurgent popularity of the Star Wars Trilogy.
+- Lego produced **635** total Star Wars sets since 1999 with over 60 sets a year released in 2012, 2014, 2016 alone. 
+- During 2014, Lego released **62** sets.  That marks the most Star Wars sets released in one year.  
+- The Star Wars Episode 4/5/6 edition released in 2005 has **11169** parts, making it the largest Star Wars set produced
+
+## Recommendations to build the next generational toy
+1. Create a toy that is extremely simple to play with.  Anyone can stack Lego bricks.
+2. Encourage the child to use their creativity and create a toy, such as a car, that they can play with when they become bored stacking bricks.
+3. Create a timeless toy which can be connected to pop culture trends such as movies and tv shows.
 
 ## The Data
 
@@ -66,26 +89,3 @@ Using PostgreSQL and Python for visualization, the following questions will be a
 
 
 ***Acknowledgments**: Rebrickable.com*
-
-## Analysis
-- From 1950 to 2017 Lego produced averaged **28698** parts per year with **2016** having the highest average with **150834** individual parts.  In **1959** Lego produced the lowest average parts with **65** parts.
-- Lego produced the most sets, **713 set** in **2014**.  The **3 sets** released in **1960** marked the lowest sets released per year.
-- An interesting trend appears when comparing the yearly production vs the average production.
-
-![image](https://github.com/bhammy27/Building_Legos_Legacy/assets/154477061/f94578e9-02a6-4b00-bc0b-a1654fe79b1e)
-
-
-Let's divide the timeline into two blocks to investigate the increased production from 1998 onward.  We will consider the time up to 1997 one block and the time after another block.
-- From 1950 up to and including 1997 Lego produced an average of just over 61 sets per year. The new average sets per year is almost 1/3rd less* than the 176.9 average sets produced per year from 1950-2017.
-- The average sets produced annually from 1998 up to and including 2017 increases to **426.1**, almost 2.5 times as many average sets per year.  What created such a large increase?
-
-### With Legos Star Wars Strikes Back!
-- In 1999 Lego produced its first Star Wars themed set to take advantage of the release of Star Wars Episode 1 and resurgent popularity of the Star Wars Trilogy.
-- Lego produced **635** total Star Wars sets since 1999 with over 60 sets a year released in 2012, 2014, 2016 alone. 
-- During 2014, Lego released **62** sets.  That marks the most Star Wars sets released in one year.  
-- The Star Wars Episode 4/5/6 edition released in 2005 has **11169** parts, making it the largest Star Wars set produced
-
-## Recommendations to build the next generational toy
-1. Create a toy that is extremely simple to play with.  Anyone can stack Lego bricks.
-2. Encourage the child to use their creativity and create a toy, such as a car, that they can play with when they become bored stacking bricks.
-3. Create a timeless toy which can be connected to pop culture trends such as movies and tv shows.  
